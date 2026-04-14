@@ -15,7 +15,7 @@ Kiindulópont: Az 1. modul workshop-jának megoldása
 
 ## 1. feladat: Képek másolása
 
-Az új szekciókhoz további fotók szükségesek. Másold be a forrásban található kilenc képeket a projekted `public/imgages/` mappájába.
+Az új szekciókhoz további fotók szükségesek. Másold be a forrásban található kilenc képeket a projekted `public/images/` mappájába.
 
 ---
 
@@ -392,7 +392,7 @@ Természetesen mobilon egymás alatt jelennek meg.
 Helyezd el a felszerelések blokkja után.
 
 ```html
-<section id="rolam" class="py-24 bg-card-bg">
+<section id="rolam" class="py-24 bg-tura-green-100">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid md:grid-cols-2 gap-16 items-center">
 
