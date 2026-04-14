@@ -193,7 +193,7 @@ A lábléc témagombjainak a háttere is feketére állítsd be.
 <button id="themeBtn" class="px-2 py-2 mt-2 rounded-2xl bg-gray-200 dark:bg-black">
 ```
 
-### 5.5. lépés: A sötét mód CSS teljességének ellenőrzése
+### 1.5. lépés: A sötét mód CSS teljességének ellenőrzése
 
 A DevTools-ban add hozzá és távolítsd el a `dark` osztályt a `<html>` elemen. Minden szekciót le kell görgetni és mindkét módban helyesen kell kinéznie.
 
@@ -306,7 +306,7 @@ A Rólam menüpontra alkalmazd a `hover:bg-tura-brown-900 dark:hover:bg-tura-gre
 <a href="#rolam" class="px-4 py-2 bg-tura-brown-800 dark:bg-green-600 hover:bg-tura-brown-900 dark:hover:bg-tura-green-700 transition text-white rounded-full ">Rólam</a>
 ```
 
-### 3.1. lépés: Hero section - CTA gombok
+### 3.2. lépés: Hero section - CTA gombok
 
 A Fedezz fel útvonalak gomb háttérszínét szeretnénk sötétebbre állítani, ha fölé megyünk kurzorral, csak most az átmenetet szeretnénk ha 300ms alatt hajtódna végre ezért alkalmazd a `hover:bg-tura-green-700 transition duration-300` formázásokat.
 
@@ -315,7 +315,7 @@ A Fedezz fel útvonalak gomb háttérszínét szeretnénk sötétebbre állítan
     Fedezz fel útvonalakat
 </a>
 ```
-A Mire van szükséged? gombra a megszokott formázásokon kívül még egy blur effektet is szeretnénk alkalmazni a `backdrop-blur-sm` osztály használatával éred el, hogy az áttetsző háttérszín mögötti háttérkép homályosabban szűrődik át a gombon.
+A Mire van szükséged? gombra a megszokott formázásokon kívül még egy blur effektet is szeretnénk alkalmazni, ezt a `backdrop-blur-sm` osztály használatával éred el, hogy az áttetsző háttérszín mögötti háttérkép homályosabban szűrődik át a gombon.
 
 ```html
 <a href="#felszereles"
@@ -323,3 +323,139 @@ A Mire van szükséged? gombra a megszokott formázásokon kívül még egy blur
     Mire van szükséged?
 </a>
 ```
+
+### 3.3. lépés: Túrázás előnyei kártyák 
+
+A túrázás előnyeihez tartozó kártyáknál szeretnénk egy kis interakciót belecsempészni, ezért mind a három kártya `<div>` elemére alkalmazd a `transform hover:-translate-y-2 transition duration-300` utility osztályokat.
+
+Ennek hatására ha a kártya fölé megyünk kurzorral a kártya felfelé elmozdul és az átmenet 300ms alatt hajtódik végre.
+
+```html
+<div class="bg-white dark:bg-tura-green-700/50 p-8 rounded-2xl shadow-xl border border-border text-center transform hover:-translate-y-2 transition duration-300">
+```
+
+### 3.4. lépés: Túraútvonal kártyák
+
+Ezeknél a kártyáknál egy "hover-zoom" effektet szeretnénk készíteni. Ez azt jelenti, hogy ha kurzorral a kártya fölé megyünk, akkor a kép növekedjen meg 5%-kal és az átmenet 300ms alatt hajtódjon végre.
+
+Ehhez két helyen kell módosítanod a kártyákat:
+- A kártya külső `<div>` elemére alkalmaznod kell a `group` utility osztályt.
+- A kép osztályait bővítsd `transition-transform duration-300 group-hover:scale-105` osztályokkal.
+
+```html
+<div class="bg-card-bg rounded-2xl overflow-hidden shadow-lg border border-card-border group">
+  <img src="/img/istallosko.jpg" alt="Istállós-kő" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+```
+
+**Hogyan működik a hover-zoom:**
+
+- `group` a külső `<div>`-en — ezt az elemet jelöli meg hover-kiváltóként
+- `group-hover:scale-105` a `<img>` elemen — nagyítja a képet, amikor a szülőelemre mutatnak
+- `overflow-hidden` a külső `<div>`-en — körülvágja a nagyított képet, hogy ne lógjon ki a kártya keretéből
+- `overflow-hidden` nélkül a kép a kártyán *kívülre* méretezne és töröttnek látszana
+
+A mentés után vidd az egeret a kártya fölé, hogy lásd a fotó zoomolását.
+
+### 3.5. lépés: Felszerelés szekció - blur effekt
+
+A felszerelések kártyáira alkalmazd a `backdrop-blur-sm` osztályt. 
+Miért jó ez nekünk? A szekció hátterében két design elemet helyeztünk el, amelyek egyes eszközökön a kártyák mögé pozícionálódnak és a blur effekt használatával a képek mögött a háromszög határoló élei elmosódva jelennek meg. Így egy kicsit izgalmasabb megjelenést eredményezünk.
+
+```html
+<div class="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm">
+```
+
+### 3.5. lépés: Rólam szekció - gomb
+
+A Lépj kapcsolatba gombnál hasonló formázásokat szeretnénk alkalmazni mint a Rólam gombnál csak zöld színnel valósítjuk meg. Alkalmazd a `hover:bg-tura-green-700 dark:hover:bg-tura-brown-600/60 transition duration-300` utility osztályokat.
+
+```html
+<a href="mailto:info@vadonszava.hu" class="px-8 py-3 bg-tura-green-600 dark:bg-tura-brown-600 text-white font-semibold rounded-lg hover:bg-tura-green-700 dark:hover:bg-tura-brown-600/60 transition duration-300">
+  Lépj kapcsolatba
+</a>
+```
+
+### 3.6. lépés: Képgaléria
+
+A galéria képeinek megtekintésénél szeretnénk alkalmazni a sepia effektet, ami "régi" képhatást eredményez. De ha rámegyünk egy képre kurzorral, akkor szeretnénk, ha ez a sepia effekt eltűnne a képről és a kép mérete 5%-kal legyen nagyobb. Az átmenet 1 másodperc alatt történjen meg.
+
+Minden képre alkalmaznod kell a `sepia-100 scale-100 hover:sepia-0 hover:scale-105 hover:z-10 transition-all duration-1000` utility osztályokat. 
+- A `sepia-100` és a `scale-100` jelenti a kép kiindulási állapotát.
+- A `hover:sepia-0`, `hover:scale-105`, éa `hover:z-10` jelenti a kép hover állapotát. A legutolsó osztályt azért kell, hogy a nagyított kép legyen legfelül ha esetleg összeérne vagy fedné valamelyik szomszédos képpel. Ami 5%-nál nem biztos hogy előfordul, de próbáld ki, hogy mi történik például `hover:scale-105` helyett `hover:scale-150` írnál.
+
+```html
+<img src="/images/gallery/gallery01.jpg" class="border border-white dark:border-tura-green-700 object-cover h-full sepia-100 scale-100 hover:sepia-0 hover:scale-105 hover:z-10 transition-all duration-1000" alt="Túrafotó 1">
+>
+```
+
+### 3.7. lépés: Hírlevél szekció - input, button
+
+Az input elem ha fókusz állapotba kerül a böngésző alapértelmezetten szokta jelezni egy külső kerettel mi ezt szeretnénk módosítani. De ezt a Tailwind árnyékkal valósítja meg és nem outline formázással. Helyezd el a következő osztályokat az input elemre: `focus:ring-2 focus:ring-tura-green-600 dark:focus:ring-tura-brown-200 outline-none`
+
+```html
+<input type="email" placeholder="Az e-mail címed" class=" bg-white grow px-6 py-4 rounded-full border border-gray-200 focus:ring-2 focus:ring-tura-green-600 dark:focus:ring-tura-brown-200 outline-none">
+```
+
+A Feliratkozó gomb háttérszíne hover állapotban legyen sötétebb (`hover:bg-tura-brown-900`), valamint a cursor alakja legyen a mutató ujj (`cursor-pointer`)
+
+```html
+<button type="submit" class="px-8 py-4 bg-tura-brown-800 hover:bg-tura-brown-900 text-white font-semibold rounded-full transition">
+  Feliratkozom
+</button>
+```
+
+### 3.8. lépés: Lábléc - Linkek, Téma gombok
+
+A linkek esetén a menüpontokhoz hasonlóan szeretnénk elérni, hogy zöld színű legyen a link a hover állapotban. Ezért a Facebook, Instagram és Strava linkekre helyezd el a `hover:text-tura-green-600 dark:hover:text-tura-green-100` utility osztályokat.
+
+```html
+<a href="#" class="text-sm mx-1 hover:text-tura-green-600 dark:hover:text-tura-green-100">Facebook</a>
+```
+
+A témaválasztó gombok esetén szintén a kurzor alakja nem megfelelő állítsd be a mutató ujjra (`cursor-pointer`).
+
+```html
+<button id="themeSystemBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200 dark:bg-black cursor-pointer">
+```
+
+Elkészültünk a weboldallal. Gratulálunk az eredményedhez!
+
+---
+
+## Extra feladat
+
+A projektben a hamburger menü funkcionális működése nem valósult meg, mert az nem a Tailwind formázásokhoz kapcsolódik. De ha van még kedved oldjuk meg közösen a legegyszerűbb módon.
+
+Készíts a `nav` elem után egy ideiglenes menüt:
+
+```html
+<div id="hamburgerMenu" class="hidden md:hidden px-4 pb-4 pt-18">
+  <a href="#kezdolap" class="block py-2">Kezdőlap</a>
+  <a href="#utvonalak" class="block py-2">Útvonalak</a>
+  <a href="#felszereles" class="block py-2">Felszerelés</a>
+  <a href="#galeria" class="block py-2">Galéria</a>
+  <a href="#rolam" class="block py-2">Rólam</a>
+</div>
+```
+
+A linkek formázásait ha szeretnéd oldd meg a navigáció menüpontjai alapján.
+
+A hamburger menü gombjának állítsd be az id-ját `menuBtn`-re.
+
+```html
+<button class="text-gray-600 hover:text-tura-green-600 focus:outline-none cursor-pointer" id="menuBtn">
+```
+
+Az `src/main.js` fájlba illeszd be a következő kódot:
+
+```js
+const menuBtn = document.getElementById("menuBtn");
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+
+menuBtn.addEventListener("click", () => {
+  hamburgerMenu.classList.toggle("hidden");
+});
+```
+
+- A gomb és a hamburger menü node-ját lekérjük id alapján
+- A gomb kattintás eseményéhez hozzárendeljük, hogy kattintásra a hamburger menü megjelenik (eltávolítjuk a hidden osztályt) vagy eltűnik (rárakjuk a hidden osztályt). Ezt a feladatot elvégzi helyettünk a `toggle()` függvény.
