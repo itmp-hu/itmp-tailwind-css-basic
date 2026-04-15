@@ -17,7 +17,7 @@ npm create vite@latest vadonszava -- --template vanilla
 ```
 
 - Az `Install with npm and start now?` kérdésre nyomj egy `Enter`-t. 
-- Ez létrehoz egy Vite alap projektet egy `vadonszava` mappán belül és elindul a fejlesztői szerver. Megtekintheted a futó weboldaladat a `http://localhost:5173/` url-re kattintva.
+- Létrehoz egy Vite alap projektet JavaScript sablonnal egy `vadonszava` mappán belül és elindul a fejlesztői szerver. Megtekintheted a futó weboldaladat a `http://localhost:5173/` url-re kattintva.
 - A szerver futását `CTRL+C` billentyűkombinációval szakíthatod meg.
 
 Ne felejts el a projektmappádba (vadonszava) belépni!
@@ -54,7 +54,7 @@ export default defineConfig({
 })
 ```
 
-- Ez utasítja a Vite-ot, hogy futtassa a Tailwindet minden build és fejlesztői szerver újratöltés részeként. Ezzel valósítod meg a `tailwindcss` plugin használatát.
+- Ez utasítja a Vite-t, hogy futtassa a Tailwindet minden build és fejlesztői szerver újratöltés részeként. Ezzel valósítod meg a `tailwindcss` plugin használatát.
 
 ### 1.4. lépés: A `src/style.css` módosítása
 

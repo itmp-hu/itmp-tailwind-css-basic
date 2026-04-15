@@ -3,10 +3,19 @@
 # Tailwind CSS alapok
 ## ITMP Klub képzés infotanároknak
 
-Az egynapos, Tailwind CSS alapú frontend fejlesztési képzésen a modern, utility-first szemléletű CSS keretrendszer segítségével hatékonyan és gyorsan építhetsz letisztult, reszponzív felületeket.
+Az egynapos, Tailwind CSS alapú frontend fejlesztési képzésen a modern, utility-first szemléletű CSS keretrendszer segítségével hatékonyan és gyorsan építhetsz letisztult, reszponzív felületeket. Ebben a kurzusban elkészíted a VadonSzava Túrablogot — egy letisztult, egyoldalas magyar túrablogot hero szekcióval, reszponzív kártyaráccsal, képgalériával és teljesen működő sötét mód kapcsolóval. Minden elemet Tailwind CSS segédosztályokkal formázunk; a dizájntokenek beállításán kívül nincs egyedi CSS-fájl.
 
 A képzés során Oláh Katalin vezető mentor segítségével lépésről lépésre ismerkedhetsz meg a Tailwind működésével. Közösen indítjuk el az első projektedet Vite használatával, miközben megtanulod a utility classok tudatos és hatékony alkalmazását.
 
+### Mit fogsz elkészíteni?
+
+Egy teljes, statikus egyoldalas weboldalt:
+
+- Rögzített, reszponzív navigáció mobil hamburger menüvel
+- Teljes képernyős hero háttérképpel és üveges (glassmorphism) CTA gombokkal
+- Előnyök-kártyarács, túraútvonal-kártyák hover-nagyítással, felszerelés szekció
+- Fotógaléria szépiáról színesre váltó hover-átmenettel
+- Sötét mód kapcsoló, amelynek állapotát `localStorage` tárolja
 
 **A továbbképzés időpontja:** 2026. április 18. (szombat) 9:00-15:00
 
