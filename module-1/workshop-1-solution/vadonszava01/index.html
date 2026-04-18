@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="hu" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VadonSzava túrablog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body class="bg-bg text-text">
+
+  <nav class="bg-nav-bg shadow-md fixed w-full z-50 border-b border-border">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="#" class="flex items-center gap-2 text-2xl font-bold text-tura-green-700">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 21l-8-11.5a1 1 0 01.8-1.5H7l2-4 2 4h2l2-4 2 4h1.2a1 1 0 01.8 1.5L12 21z"></path>
+            </svg>
+            <span>Vadon<span class="text-tura-brown-800">Szava</span></span>
+          </a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+          <a href="#kezdolap" class="text-gray-600 font-medium">Kezdőlap</a>
+          <a href="#utvonalak" class="text-gray-600 font-medium">Útvonalak</a>
+          <a href="#felszereles" class="text-gray-600 font-medium">Felszerelés</a>
+          <a href="#galeria" class="text-gray-600 font-medium ">Galéria</a>
+          <a href="#rolam" class="px-4 py-2 bg-tura-brown-800 text-white rounded-full">Rólam</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="kezdolap" class="relative h-screen flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('/images/banner.jpg');">
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-5xl">
+      <h1 class="text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
+        Az út nem csak célhoz vezet, hanem
+        <span class="text-tura-green-100">önmagadhoz is.</span>
+      </h1>
+      <p class="text-xl text-gray-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+        Fedezd fel a vadont, szívd be a friss hegyi levegőt, és hagyd magad mögött a mindennapok zaját.
+        A túrázás nem sport, hanem visszatérés a gyökereinkhez.
+      </p>
+      <div class="flex flex-row gap-6 justify-center">
+        <a href="#utvonalak"
+          class="px-10 py-4 bg-tura-green-600 text-white font-semibold rounded-lg text-lg shadow-lg">
+          Fedezz fel útvonalakat
+        </a>
+        <a href="#felszereles"
+          class="px-10 py-4 bg-white/10  text-white border border-white/30 font-semibold rounded-lg text-lg">
+          Mire van szükséged?
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="py-12 px-8 bg-nav-bg border-t border-border text-text">
+    <div class="max-w-7xl mx-auto flex justify-between">
+      <div>
+         <a href="#" class="text-lg font-bold text-tura-green-700">            
+            <span>Vadon<span class="text-tura-brown-800">Szava</span></span>
+         </a>
+        <a href="#" class="text-sm mx-1">Facebook</a>
+        <a href="#" class="text-sm mx-1">Instagram</a>
+        <a href="#" class="text-sm mx-1">Strava</a>
+      </div>
+      <div>
+        <button id="themeSystemBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200">      
+           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-cog" aria-hidden="true"><path d="M12 17v4"></path><path d="m14.305 7.53.923-.382"></path><path d="m15.228 4.852-.923-.383"></path><path d="m16.852 3.228-.383-.924"></path><path d="m16.852 8.772-.383.923"></path><path d="m19.148 3.228.383-.924"></path><path d="m19.53 9.696-.382-.924"></path><path d="m20.772 4.852.924-.383"></path><path d="m20.772 7.148.924.383"></path><path d="M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path><path d="M8 21h8"></path><circle cx="18" cy="6" r="3"></circle></svg>
+        </button>
+        <button id="themeLightBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200">          
+           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+        </button>
+        <button id="themeDarkBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </button>
+      </div>            
+    </div>
+    <p class="max-w-7xl mx-auto text-sm">© 2026 Minden jog fenntartva.</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

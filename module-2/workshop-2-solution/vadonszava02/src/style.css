@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {  
+  --color-tura-green-100: #dceecd;
+  --color-tura-green-600: #2e7d32;
+  --color-tura-green-700: #1b5e20;
+  --color-tura-green-900: #022705;
+  --color-tura-brown-100: #efebe9;
+  --color-tura-brown-200: #c2ada6;
+  --color-tura-brown-600: #8d6e63;
+  --color-tura-brown-800: #5d4037;
+  --color-tura-brown-900: #3e2723;
+
+  --font-sans: Inter, sans-serif;
+  --font-serif: Merriweather, serif;
+}
+
+:root {
+  --color-bg:          white;
+  --color-bg-tinted:   var(--color-tura-green-100);
+  --color-nav-bg:      white;
+  --color-card-bg:     white;
+  --color-heading:     var(--color-tura-brown-900);
+  --color-text:        var(--color-gray-700);
+  --color-border:      var(--color-tura-brown-100);
+  --color-card-border: var(--color-gray-100);
+  --color-tag-bg:      var(--color-tura-green-100);
+  --color-tag-text:    var(--color-tura-green-700);
+}
+
+@theme inline {
+  --color-bg:          var(--color-bg);
+  --color-bg-tinted:   var(--color-bg-tinted);
+  --color-nav-bg:      var(--color-nav-bg);
+  --color-card-bg:     var(--color-card-bg);
+  --color-heading:     var(--color-heading);
+  --color-text:        var(--color-text);
+  --color-border:      var(--color-border);
+  --color-card-border: var(--color-card-border);
+  --color-tag-bg:      var(--color-tag-bg);
+  --color-tag-text:    var(--color-tag-text);
+}
