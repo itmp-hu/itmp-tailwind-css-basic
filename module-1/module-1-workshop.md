@@ -149,7 +149,7 @@ Mentsd el a változásokat. A bekezdés formázásai:
 
 | Osztály          | Hatás                               |
 |------------------|-------------------------------------|
-| `text-gray-600`  | Szövegszín: sötétzöld `#4a5565`     |
+| `text-gray-600`  | Szövegszín: sötétszürke `#4a5565`     |
 | `px-8`           | Vízszintes irányba belső margó 2rem |
 | `text-lg`        | Betűméret: 1.125rem (18px)          |
 
@@ -222,7 +222,7 @@ A lényeg: Az @theme {} blokkban definiált változókhoz a Tailwind automatikus
 
 ### 3.3. lépés: Betűtípus design tokenek és Google Fonts hozzáadása
 
-A blog az `Inter (sans-serif)7` és a `Merriweather (serif)` betűtípusokat használja a Google Fonts-ból. 
+A blog az `Inter (sans-serif)` és a `Merriweather (serif)` betűtípusokat használja a Google Fonts-ból. 
 
 Add hozzá a betűtípus importot az `index.html` fájlban a `<head>` belsejébe.
 
@@ -241,9 +241,9 @@ Most a `font-sans` utility osztály az Intert, a `font-serif` a Merriweathert ha
 
 ### 3.4. lépés: Szemantikus tokenek hozzáadása
 
-A egyszerű design tokenek a nyers színeket definiálják. A **szemantikus tokenek** *jelentést* adnak ezeknek a színeknek — leírják, mire *való* a szín, nem azt, hogyan néz ki. Ez teszi lehetővé a dark mód egyszerűbb kezelését, használatát majd a 3. modulban.
+Az egyszerű design tokenek a nyers színeket definiálják. A **szemantikus tokenek** *jelentést* adnak ezeknek a színeknek — leírják, mire *való* a szín, nem azt, hogyan néz ki. Ez teszi lehetővé a dark mód egyszerűbb kezelését, használatát majd a 3. modulban láthatjuk.
 
-A `src/style.css` fájlt bővítsd a szemantikus tokenek definiálásával. E
+A `src/style.css` fájlt bővítsd a szemantikus tokenek definiálásával.
 
 ```css
 :root {
@@ -262,11 +262,11 @@ A `src/style.css` fájlt bővítsd a szemantikus tokenek definiálásával. E
 
 A `:root` részben definiált változók standard CSS custom property-nek minősül és alapértelmezetten a light módban használt színeket rendeljük hozzá. A változók egy része az általunk definiált saját színeket használja.
 
-A `:root` részben definiált változókból nem képződik automatikusan utility-kké.  
+A `:root` részben definiált változókból nem képződik automatikusan utility osztályokra.  
 
 ### 3.5. lépés: Szemantikus tokenek leképezése Tailwind utility-kre
 
-A CSS custom property-k nem válnak automatikusan Tailwind utility-kké. Szükség van még egy lépésre — az `@theme inline {}` blokkra:
+A CSS custom property-k nem válnak automatikusan Tailwind utility osztályokká. Szükség van még egy lépésre — a `@theme inline {}` blokkra:
 
 ```css
 @theme inline {
@@ -283,7 +283,7 @@ A CSS custom property-k nem válnak automatikusan Tailwind utility-kké. Szüks�
 }
 ```
 
-Az `@theme inline` azt mondja a Tailwindnek: "generálj utility osztályokat ezekhez a design tokenekhez, de old fel őket futásidőben, hogy a CSS változó értéke megváltoztatható legyen (pl. amikor `.dark` kerül a `<html>` elemre)."
+A `@theme inline` azt mondja a Tailwindnek: "generálj utility osztályokat ezekhez a design tokenekhez, de oldd fel őket futásidőben, hogy a CSS változó értéke megváltoztatható legyen (pl. amikor `.dark` kerül a `<html>` elemre)."
 
 Most a `bg-bg`, `text-heading`, `border-border` stb. érvényes Tailwind osztályok — és a 3. modulban, amikor hozzáadjuk a sötét módot, automatikusan átváltanak a sötét palettára, csupán egy `.dark` osztály `<html>` elemre adásával.
 
@@ -348,7 +348,7 @@ Itt az ideje, hogy az ideiglenes `<h1>` elemet felváltsa a valódi oldalszerkez
 
 Az `index.html` fájlban végezd el a következő lépéseket:
 
-A `<html>` tag-re helyezd el a scroll-smooth utility osztályt.
+A `<html>` tag-re helyezd el a `scroll-smooth` utility osztályt.
 
 ```html
 <html lang="hu" class="scroll-smooth">
@@ -509,33 +509,33 @@ A lábléc egyszerű. A következő elemeket tartalmazza:
 
 A következő kódot helyezd el a `</section>` elem után `<script>` elem elé.
 - A VadonSzava a menüben található márkanévnek megfelelően van tagolva és formázva, annyi különbséggel, hogy kisebb betűkkel jelenik meg.
-- A három gombban egy-egy svg ikont helyeztünk el, amelyek jelzik hogy melyik témaválasztást fogunk megvalósítani a 3. modulban.
+- A három gombban egy-egy SVG ikont helyeztünk el, amelyek jelzik hogy melyik témaválasztást fogunk megvalósítani a 3. modulban.
 
 ```html
-  <footer class="py-12 px-8 bg-nav-bg border-t border-border text-text">
-    <div class="max-w-7xl mx-auto flex justify-between">
-      <div>
-         <a href="#" class="text-lg font-bold text-tura-green-700">            
-            <span>Vadon<span class="text-tura-brown-800">Szava</span></span>
-         </a>
-        <a href="#" class="text-sm mx-1">Facebook</a>
-        <a href="#" class="text-sm mx-1">Instagram</a>
-        <a href="#" class="text-sm mx-1">Strava</a>
-      </div>
-      <div>
-        <button id="themeSystemBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200">      
-           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-cog" aria-hidden="true"><path d="M12 17v4"></path><path d="m14.305 7.53.923-.382"></path><path d="m15.228 4.852-.923-.383"></path><path d="m16.852 3.228-.383-.924"></path><path d="m16.852 8.772-.383.923"></path><path d="m19.148 3.228.383-.924"></path><path d="m19.53 9.696-.382-.924"></path><path d="m20.772 4.852.924-.383"></path><path d="m20.772 7.148.924.383"></path><path d="M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path><path d="M8 21h8"></path><circle cx="18" cy="6" r="3"></circle></svg>
-        </button>
-        <button id="themeLightBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200">          
-           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
-        </button>
-        <button id="themeDarkBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
-        </button>
-      </div>            
+<footer class="py-12 px-8 bg-nav-bg border-t border-border text-text">
+  <div class="max-w-7xl mx-auto flex justify-between">
+    <div>
+        <a href="#" class="text-lg font-bold text-tura-green-700">            
+          <span>Vadon<span class="text-tura-brown-800">Szava</span></span>
+        </a>
+      <a href="#" class="text-sm mx-1">Facebook</a>
+      <a href="#" class="text-sm mx-1">Instagram</a>
+      <a href="#" class="text-sm mx-1">Strava</a>
     </div>
-    <p class="max-w-7xl mx-auto text-sm">© 2026 Minden jog fenntartva.</p>
-  </footer>
+    <div>
+      <button id="themeSystemBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200">      
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-cog" aria-hidden="true"><path d="M12 17v4"></path><path d="m14.305 7.53.923-.382"></path><path d="m15.228 4.852-.923-.383"></path><path d="m16.852 3.228-.383-.924"></path><path d="m16.852 8.772-.383.923"></path><path d="m19.148 3.228.383-.924"></path><path d="m19.53 9.696-.382-.924"></path><path d="m20.772 4.852.924-.383"></path><path d="m20.772 7.148.924.383"></path><path d="M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path><path d="M8 21h8"></path><circle cx="18" cy="6" r="3"></circle></svg>
+      </button>
+      <button id="themeLightBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200">          
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+      </button>
+      <button id="themeDarkBtn" class="px-2 py-2 mt-2 rounded-md bg-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+      </button>
+    </div>            
+  </div>
+  <p class="max-w-7xl mx-auto text-sm">© 2026 Minden jog fenntartva.</p>
+</footer>
 ```
 ---
 

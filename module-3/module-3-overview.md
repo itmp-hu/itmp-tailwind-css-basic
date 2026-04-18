@@ -46,7 +46,7 @@ Egy példán keresztül nézzük meg a működését.
 
 **1. Mi történik a :root-ban?**
 
-Amikor a :root-ban definiálod a `--color-nav-bg: white;` változót, az egy natív CSS változó lesz. A Tailwind v4 ezt alapértelmezés szerint nem látja utility-ként (nem lesz belőle bg-nav-bg), amíg be nem regisztrálod a @theme blokkba.
+Amikor a :root-ban definiálod a `--color-nav-bg: white;` változót, az egy natív CSS változó lesz. A Tailwind v4 ezt alapértelmezés szerint nem látja utility-ként (nem lesz belőle bg-nav-bg), amíg be nem regisztrálod a @theme{} blokkba.
 
 **2. A sötét mód felülírása (.dark)**
 

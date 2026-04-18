@@ -5,7 +5,7 @@
 Míg a Flexbox egy dimenzióban (sor vagy oszlop) gondolkodik, a Grid két dimenzióban (sorok és oszlopok egyszerre) teszi lehetővé az összetett elrendezések kezelését.
 
 - Aktiválás: `grid`
-- Oszlopok definiálása: g`rid-cols-{n}` (pl. `grid-cols-3` három egyenlő oszlophoz).
+- Oszlopok definiálása: `grid-cols-{n}` (pl. `grid-cols-3` három egyenlő oszlophoz).
 - Sorok definiálása: `grid-rows-{n}`.
 - Oszlopközök/Sorközök: `gap-{size}` (összes), `gap-x-{n}` (csak oszlopok közt), `gap-y-{n}` (csak sorok közt).
 - Span (Kiterjedés): Ha egy elem több oszlopot foglaljon el: `col-span-2`, vagy az egész sort: `col-span-full`.
@@ -35,7 +35,7 @@ Használata: Csak írd a töréspont nevét az osztály elé:
 
 **Mire érdemes figyelni?**
 
-A Tailwind v4-ben a töréspontokat is definiálhatod a CSS @theme blokkban, ha egyedi méretekre lenne szükséged (például egy ultra-széles monitorhoz):
+A Tailwind v4-ben a töréspontokat is definiálhatod a CSS `@theme{}` blokkban, ha egyedi méretekre lenne szükséged (például egy ultra-széles monitorhoz):
 
 ```css
 @theme {

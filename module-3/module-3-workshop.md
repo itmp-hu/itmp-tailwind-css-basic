@@ -13,7 +13,7 @@ Kiindulópont: A 2. modul workshop-jának megoldása
 
 ## 1. feladat: Sötét mód
 
-Ha minden tartalmi egységet sikerült elkészítened, akkor ideje a webodal dark módjával is foglalkozni.
+Ha minden tartalmi egységet sikerült elkészítened, akkor ideje a webodal dark módjával is foglalkoznod.
 
 1. Mondd meg a Tailwindnek, hogyan érzékelje a sötét módot (egy sor a `style.css` fájlban).
 2. Írd felül a szemantikus token értékeket, amikor a sötét mód aktív.
@@ -53,13 +53,13 @@ A `:root {}` blokk (világos mód alapértékei) után add hozzá a sötét mód
 
 Nyisd meg a böngésző DevTools-t (F12), menj a **Vizsgáló** (Firefox) vagy **Elements** (Chrome) fülre, és keresd meg a `<html>` elemet. Kattints duplán a `class` attribútumára (jelenleg `scroll-smooth` van rajta) és add hozzá a `dark` értéket:
 
-```
-class="scroll-smooth dark"
+```html
+<html class="scroll-smooth dark">
 ```
 
 Nyomj Entert. Az oldal azonnal sötét módra kell váltson — sötét háttér, világosabb szöveg, zöldes-sötét navigáció.
 
-> **Ez a szemantikus tokenek megtérülése.** A `bg-bg`, `text-heading`, `bg-card-bg` stb. osztályokat használó összes szekció automatikusan frissül. Még egyetlen `dark:` osztályt sem írtál.
+> **Ez a szemantikus tokenek megtérülése.** A `bg-bg`, `text-heading`, `bg-card-bg` stb. osztályokat használó összes szekció automatikusan frissül. Még egyetlen `dark:` variánst sem írtál.
 
 ### 5.4. lépés: `dark:` téma variánsok hozzáadása a primitive tokenek esetén
 
@@ -87,7 +87,7 @@ Keresd meg az asztali navigációs linkeket és add hozzá a `dark:text-gray-100
 
 Tedd ugyanezt az Útvonalak, Felszerelés és Galéria linkeknél is.
 
-Keresd meg a "Rólam" pill gombot:
+Keresd meg a "Rólam" gombot:
 
 ```html
 <a href="#rolam"
@@ -281,7 +281,7 @@ themeDarkBtn.addEventListener('click', () => {applyTheme('dark')});
 
 ## 3. A weboldalon interakciók kialakítása (effektek, transzformációk, átmenetek kialakítása)
 
-Már csak finomítások maradtak, amelyek a UI élményhez adnak hozzá. Ilyen néhány interakció és effektek alkalmazás, például
+Már csak finomítások maradtak, amelyek a UI/UX élményhez adnak hozzá. Ilyen néhány interakció és effektek alkalmazás, például
 
 - gombok és a linkeknél
 - galéria képei, vagy kártyák megtekintésénél
