@@ -29,7 +29,7 @@ Nincs szükség CSS-fájlra — az osztályok maguk a stílusok. A Tailwind csak
 
 ### Tailwind v4: CSS-alapú konfiguráció
 
-A Tailwind v4 megszünteti a JavaScript konfigurációs fájlt. Minden — az egyedi színek, betűtípusok és dizájntokenek is — a CSS-fájlban konfigurálható a `@theme {}` blokk segítségével. 
+A Tailwind v4 megszünteti a JavaScript konfigurációs fájlt. Minden — az egyedi színek, betűtípusok és design tokenek is — a CSS-fájlban konfigurálható a `@theme {}` blokk segítségével. 
 
 ---
 
@@ -52,12 +52,12 @@ A Tailwind CSS v4 egy hatalmas ugrás a keretrendszer életében, a középpontb
 
 Leegyszerűsítve a design token egy központi helyen definiált, névvel ellátott érték, amely egy vizuális stílusjegyet (szín, távolság, betűtípus stb.) képvisel.
 
-A korábbi verziókkal ellentétben, ahol a tailwind.config.js fájlban JSON-szerű objektumokban tároltuk ezeket, a v4-ben a tokenek natív CSS változók (`--variable-name`).
+A korábbi verziókkal ellentétben, ahol a `tailwind.config.js` fájlban JSON-szerű objektumokban tároltuk ezeket, a v4-ben a tokenek natív CSS változók (`--variable-name`).
 
 ### Mire használjuk őket?
 
 - **Konzisztencia**: Biztosítják, hogy a "kék" mindenhol ugyanazt az árnyalatot jelentse az oldalon.
-- **Skálázhatóság**: Ha a márka színe megváltozik, csak egyetlen változót kell átírnod a CSS-ben, és az összes utility osztály (bg-brand, text-brand) frissül.
+- **Skálázhatóság**: Ha a márka színe megváltozik, csak egyetlen változót kell átírnod a CSS-ben, és az összes utility osztály (`bg-brand`, `text-brand`) frissül.
 - **Témázhatóság**: Könnyűvé teszik a Sötét/Világos mód vagy egyedi témák kezelését pusztán a változók felülírásával.
 
 ### Design tokenek csoportosítása

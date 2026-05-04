@@ -1,6 +1,6 @@
 # 1. modul - Workshop:  Tailwind projekt készítés, navigáció, hero section, lábléc elkészítése
 
-**Cél**: A workshop végére lesz egy futó Vite projekted Tailwind CSS v4-gyel, egy CSS-ben definiált egyéni design rendszerrel, egy stílusozott navigációs sávval, egy teljes képernyőnyi hero szakcióval és egy lábléccel.
+**Cél**: A workshop végére lesz egy futó Vite projekted Tailwind CSS v4-gyel, egy CSS-ben definiált egyéni design rendszerrel, egy formázott navigációs sávval, egy teljes képernyőnyi hero szakcióval és egy lábléccel.
 
 ---
 
@@ -77,7 +77,7 @@ import './style.css';
 
 ### 1.6. lépés: Az `index.html` módosítása
 
-Nyisd meg az `index.html` fájlt. Távolíts el mindent a `<body>` belsejéből a script tag kivételével. Add hozzá a stíluslap hivatkozást. A fájlod így nézzen ki:
+Nyisd meg az `index.html` fájlt. Távolíts el mindent a `<body>` belsejéből a `<script>` tag kivételével. Add hozzá a stíluslap hivatkozást. A fájlod így nézzen ki:
 
 ```html
 <!doctype html>
@@ -142,7 +142,9 @@ Nézzük meg, mit csinál minden egyes osztály:
 A főcím alá illeszd be a következő bekezdést:
 
 ```html
-<p class="text-gray-600 px-8 text-lg">Fedezd fel Magyarország legjobb túraútvonalait.</p>
+<p class="text-gray-600 px-8 text-lg">
+  Fedezd fel Magyarország legjobb túraútvonalait.
+</p>
 ```
 
 Mentsd el a változásokat. A bekezdés formázásai:
@@ -182,7 +184,7 @@ Ha kész vagy, indítsd újra a fejlesztői szervert:
 npm run dev
 ```
 
-> **Kulcsszempont:** Az `npm run dev` a munkakörnyezeted (gyors, HMR-rel). Az `npm run build` hozza létre a telepíthető kimenetet. Vizuálisan ugyanazt az eredményt adják — csak a kézbesítési mechanizmus különbözik.
+> **Megjegyzés:** Az `npm run dev` a munkakörnyezeted (gyors, HMR-rel). Az `npm run build` hozza létre a telepíthető kimenetet. Vizuálisan ugyanazt az eredményt adják — csak a kézbesítési mechanizmus különbözik.
 
 ---
 
@@ -218,7 +220,7 @@ Mentsd el a CSS fájl módosításait és az `index.html` fájlban változtasd m
 
 A cím betűszíne a saját zöld színünkben jelenik meg. 
 
-A lényeg: Az @theme {} blokkban definiált változókhoz a Tailwind automatikusan design tokeneket rendel, amelyekből utility osztályok generálódnak. Például a `--color-tura-green-700` változó alapján olyan osztályokat használhatsz, mint a `text-tura-green-700`, `bg-tura-green-700`, vagy `border-tura-green-700`.
+**A lényeg:** Az `@theme {}` blokkban definiált változókhoz a Tailwind automatikusan design tokeneket rendel, amelyekből utility osztályok generálódnak. Például a `--color-tura-green-700` változó alapján olyan osztályokat használhatsz, mint a `text-tura-green-700`, `bg-tura-green-700`, vagy `border-tura-green-700`.
 
 ### 3.3. lépés: Betűtípus design tokenek és Google Fonts hozzáadása
 
@@ -241,7 +243,7 @@ Most a `font-sans` utility osztály az Intert, a `font-serif` a Merriweathert ha
 
 ### 3.4. lépés: Szemantikus tokenek hozzáadása
 
-Az egyszerű design tokenek a nyers színeket definiálják. A **szemantikus tokenek** *jelentést* adnak ezeknek a színeknek — leírják, mire *való* a szín, nem azt, hogyan néz ki. Ez teszi lehetővé a dark mód egyszerűbb kezelését, használatát majd a 3. modulban láthatjuk.
+Az egyszerű design tokenek a nyers színeket definiálják. A **szemantikus tokenek** *jelentést* adnak ezeknek a színeknek — leírják, mire *való* a szín, nem azt, hogyan néz ki. Ez teszi lehetővé a dark mód egyszerűbb kezelését, használatát majd a 3. modulban láthatod.
 
 A `src/style.css` fájlt bővítsd a szemantikus tokenek definiálásával.
 
@@ -262,7 +264,7 @@ A `src/style.css` fájlt bővítsd a szemantikus tokenek definiálásával.
 
 A `:root` részben definiált változók standard CSS custom property-nek minősül és alapértelmezetten a light módban használt színeket rendeljük hozzá. A változók egy része az általunk definiált saját színeket használja.
 
-A `:root` részben definiált változókból nem képződik automatikusan utility osztályokra.  
+A `:root` részben definiált változókból nem képződik automatikusan utility osztályok.  
 
 ### 3.5. lépés: Szemantikus tokenek leképezése Tailwind utility-kre
 
@@ -362,13 +364,13 @@ A `<body>` tag-re helyezd el a következő utility osztályokat:
 <body class="bg-bg text-text">
 ```
 - A `bg-bg` és a `text-text` a szemantikus tokeneket használja az oldal háttérszínéhez és az alapértelmezett szövegszínhez.
-- Ezekkel könnyebb lesz majd végrehajtani a light és dark mód váltását a későbbiekben.
+- Ezekkel könnyebb lesz majd végrehajtanod a light és dark mód váltását a későbbiekben.
 
 Távolítsd el a korábban hozzáadott ideiglenes `<h1>` és `<p>` elemeket is.
 
 ### 4.2. lépés: A `<nav>` elem hozzáadása
 
-A `<body>` belsejébe, a script tag elé add hozzá a navigációt:
+A `<body>` belsejébe, a `<script>` tag elé add hozzá a navigációt:
 
 ```html
 <nav class="bg-nav-bg shadow-md fixed w-full z-50 border-b border-border">
@@ -380,11 +382,11 @@ A `<body>` belsejébe, a script tag elé add hozzá a navigációt:
 </nav>
 ```
 
-Egy vékony fehér sávot kell látnod az oldal tetején. Kulcsfontosságú osztályok:
+Egy vékony fehér sávot kell látnod az oldal tetején. Az osztályok amiket használtunk:
 - `bg-nav-bg` és  a `border-border` szemantikus design tokenek felhasználásával állítjuk be a színeket
 - `fixed w-full z-50` — az oldal tetejéhez rögzítjük a menüt. A menü teljes szélességben és minden oldaltartalom felett jelenjen meg az oldalon.
-- `max-w-7xl mx-auto` — a tartalom középre igazítása maximális szélességgel jelenjen meg
-- `flex justify-between h-16` — vízszintes elrendezés, a logó balra, a linkek jobbra. A tárolóelem magassága 4rem.
+- `max-w-7xl mx-auto` — a tartalom középre igazítása maximális szélességgel jelenjen meg.
+- `flex justify-between h-16` — vízszintes elrendezés, a logó balra, a linkek jobbra igazodik. A tárolóelem magassága 4rem.
 
 > **Megjegyzés:** A navigáció rögzített, ezért átfedi a hero szekció tetejét. A hero szekció ezt kitöltéssel/magassággal kezeli a következő feladatban.
 
@@ -405,11 +407,11 @@ A belső `<div class="flex justify-between h-16">` elembe illeszd be:
 ```
 
 - Egy hivatkozásba elhelyeztünk egy SVG ikont és a "VadonSzava" márkanevet.
-- Szeretnénk hogy a logó és a márkanév függőlegesen egyvonalba kerüljön ezért alkalmaztuk a `flex items-center` utility osztályokat
+- Szeretnénk hogy a logó és a márkanév függőlegesen egyvonalba kerüljön, ezért alkalmaztuk a `flex items-center` utility osztályokat.
 - A márkanevet a saját színeinkkel színeztük ki.
 - A logót pedig 2rem-re állítottuk a `w-8` és `h-8` osztályok használatával.
 
-### 4.4. lépés: Navigációs linkek hozzáadása (asztali)
+### 4.4. lépés: Navigációs linkek hozzáadása (asztali nézet)
 
 A logó `<div>` után add hozzá az asztali navigációs linkeket:
 
@@ -424,7 +426,7 @@ A logó `<div>` után add hozzá az asztali navigációs linkeket:
 </div>
 ```
 - Most jelenleg asztali nézet menüpontjait formáztuk meg.
-- A `font-medium` osztállyal 500-as betűvastagságot állítottunk be a linkekre
+- A `font-medium` osztállyal 500-as betűvastagságot állítottunk be a linkekre.
 - A `rounded-full` segítségével a Rólam link sarkait teljes mértékbe lekerekítettük.
 
 ---
@@ -446,7 +448,7 @@ Az `index.html` fájlon belül a `</nav>` záró tag után add hozzá:
 </section>
 ```
 
-A hegyi fotónak ki kell töltenie a teljes ablakot. Kulcsfontosságú osztályok:
+A hegyi fotónak ki kell töltenie a teljes ablakot. Fontosabb utility osztályok:
 - `h-screen` — a böngésző ablak magasságának 100%-a.
 - `bg-cover bg-center` — a kép méretezése a szekció lefedéséhez, középre igazítva
 - `relative` — pozicionálási kontextust teremt az overlay számára (következő lépés)
@@ -459,7 +461,7 @@ A szekción belül add hozzá:
 <div class="absolute inset-0 bg-black/50"></div>
 ```
 
-- Az `absolute inset-0` kinyújtja a divet, hogy kitöltse a szülő szekciót. 
+- Az `absolute inset-0` kinyújtja a divet, hogy kitöltse a szülő elemet. 
 - A `bg-black/50` 50%-os átlátszóságú fekete hátteret alkalmaz, elsötétítve a fotót, hogy a szöveg olvasható legyen rajta.
 
 ### 5.4. lépés: A főcím és az alcím hozzáadása
@@ -509,7 +511,7 @@ A lábléc egyszerű. A következő elemeket tartalmazza:
 
 A következő kódot helyezd el a `</section>` elem után `<script>` elem elé.
 - A VadonSzava a menüben található márkanévnek megfelelően van tagolva és formázva, annyi különbséggel, hogy kisebb betűkkel jelenik meg.
-- A három gombban egy-egy SVG ikont helyeztünk el, amelyek jelzik hogy melyik témaválasztást fogunk megvalósítani a 3. modulban.
+- A három gombon belül egy-egy SVG ikont helyeztünk el, amelyek jelzik hogy melyik témaválasztást fogunk megvalósítani a 3. modulban.
 
 ```html
 <footer class="py-12 px-8 bg-nav-bg border-t border-border text-text">
@@ -544,4 +546,4 @@ A következő kódot helyezd el a `</section>` elem után `<script>` elem elé.
 Sikeresen végigértél az 1. workshopon, amit sikerült elkészítened a weboldalon:
 - egyszerűbb menüt (logó, márkanév, menüpontok)
 - egy hero sectiont, amely felkelti az oldalra látogató figyelmét, cselekvésre ösztönzi őket.
-- láblécet, amely tartalmazza a blogger elérhetőségét,szerzői jogot és nem utolsó sorban a témaváltó gombokat, amelyek tényelges funkcionális működését a 3. modulban fogunk megvalósítani.
+- láblécet, amely tartalmazza a blogger elérhetőségét, szerzői jogot és nem utolsó sorban a témaváltó gombokat, amelyek tényelges funkcionális működését a 3. modulban fogunk megvalósítani.

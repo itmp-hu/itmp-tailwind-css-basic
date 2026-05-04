@@ -14,7 +14,7 @@ Egy teljes, statikus egyoldalas weboldalt:
 - Rögzített, reszponzív navigáció mobil hamburger menüvel
 - Teljes képernyős hero háttérképpel és üveges (glassmorphism) CTA gombokkal
 - Előnyök-kártyarács, túraútvonal-kártyák hover-nagyítással, felszerelés szekció
-- Fotógaléria szépiáról színesre váltó hover-átmenettel
+- Fotógaléria sepia-ról színesre váltó hover-átmenettel
 - Sötét mód kapcsoló, amelynek állapotát `localStorage` tárolja
 
 **A továbbképzés időpontja:** 2026. április 18. (szombat) 9:00-15:00
