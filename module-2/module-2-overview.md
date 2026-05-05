@@ -22,7 +22,7 @@ Alapértelmezett töréspontok:
 - **xl**: (1280px) – Desktop
 - **2xl**: (1536px) – Nagy monitor
 
-Használata: Csak írd a töréspont nevét az osztály elé:
+Használata: Csak írd a töréspont nevét az osztály elé kettősponttal elválasztva, de ügyelj hogy a kettőspont jel után ne legyen szóköz:
 
 ```html
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -54,7 +54,7 @@ A képeknél a legfontosabb, hogy ne torzuljanak el, és illeszkedjenek a tárol
   
   `object-cover`: Kitölti a területet, a felesleget levágja (profilképekhez kiváló).
 
-  `object-contain`: Úgy méretezi a képet, hogy az egész látsszon (nem vág le semmit).
+  `object-contain`: Úgy méretezi a képet, hogy az egész kép látszódjon (nem vág le semmit).
 
 - Arányok (Aspect ratio): `aspect-video` (16:9), `aspect-square` (1:1).
 - Lekerekítés és keret: `rounded-lg`, `border-4`, `border-white`.

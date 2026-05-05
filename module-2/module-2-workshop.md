@@ -1,11 +1,11 @@
 # 2. modul - Workshop:  Tartalmi szekciók, komponensek készítése, rácsrendszerek, töréspontok használata.
 
-Cél: 
+**Cél:**
 - A tartalmi részek elkészítése komponensekkel együtt
 - Grid rácsrendszer alkalmazása a komponensek, elemek elhelyezésére
 - Töréspontok alkalmazása a reszponzív oldal kialakításának érdekében
 
-Kiindulópont: Az 1. modul workshop-jának megoldása 
+**Kiindulópont:** Az 1. modul workshop-jának megoldása 
 - Navigációs terület
 - Hero section
 - Lábléc
@@ -116,7 +116,7 @@ Az első kártya után add hozzá:
 
 ### 2.6. lépés: A rács ellenőrzése
 
-Nyisd meg a böngésződ fejlesztői eszköztárát és az ablak szélességének módosításával ellenőrízd a rácsrendszer működését. 
+Nyisd meg a böngésződ fejlesztői eszköztárát és az ablak szélességének módosításával ellenőrizd a rácsrendszer működését. 
 
 - **Asztali és tablet nézetben**: Három kártya egymás mellett egy sorban
 - **Mobil nézetben** (keskeny böngésző): A kártyák egymás alá kerülnek, soronként egy
@@ -156,7 +156,7 @@ A belső `<div>` belsejébe:
 </div>
 ```
 
-- `flex justify-between`: a cím és a link az tárolóelem két szélére igazodik vízszintes irányban
+- `flex justify-between`: a cím és a link a tárolóelem két szélére igazodik vízszintes irányban.
 - `text-heading`: alcím színét itt is egy szemantikus token felhasználásával állítjuk be.
 
 ### 3.3. lépés: A kártyarács konténer hozzáadása
@@ -203,7 +203,7 @@ A kártya négy fő részre osztható:
 
 Kiemelendő utility osztályok:
 - `overflow-hidden`: azért alkalmazzuk a kártyára ezt a beállítást, mert a sarkai lekerekítettek és nem szeretnénk ha kép sarkai kilógnának a kartyán. Így nem kell külön gondoskodni a kép bal-felső és jobb-felső sarkainak lekerekítésén.
-- `w-full h-64`: beállítással a kép méretét meghatároztuk, hogy mindig teljes szélességbe töltse ki a kártyát, viszont a magassága 16rem legyen.
+- `w-full h-64`: ezzel a beállítással a kép méretét meghatároztuk, hogy mindig teljes szélességbe töltse ki a kártyát, viszont a magassága 16rem legyen.
 - `object-cover`: a kártyák illusztrációs képei nem biztos hogy egyforma méretűek, viszont a rendelkezésükre álló helyet a fenti beállítással meghatároztuk. Az object-cover beállításnak köszönhetően ha a kép nagyobb, vagy kisebb akkor méretarányosan 'kifeszül' a megadott területre és az esetleges kilógó részek nem jelennek meg.
 - `line-clamp-2`: elrejti a túlcsorduló szöveget, vertikális „dobozként” kezeli a bekezdésünket és maximum két sort jelenít meg a szövegből.
 
@@ -253,7 +253,7 @@ Figyeld meg a nehézségi jelvényt: `bg-blue-100 text-blue-700` a piros helyett
 </div>
 ```
 
-Érdemes ellenőrízned a böngésző szélességének a módosításával a rácsrendszer működését is.
+Érdemes ellenőrizned a böngésző szélességének a módosításával a rácsrendszer működését is.
 
 ---
 
@@ -443,18 +443,18 @@ A fotó `<div>` eleme után helyezd el:
 
 ### 5.4. lépés: A Rólam szekció ellenőrzése
 
-- Asztali gépen: fotó balra, bemutatkozó szöveg jobbra, egymás mellett
+- Asztali gépen: fotó balra, bemutatkozó szöveg jobbra, egymás mellett jelenik meg.
 - Mobilon: a fotó a szöveg fölé kerül
 
 ---
 
 ## 6. feladat: Galéria szekció
 
-A Galéria CSS Gridet használ, amelyben egy kép két sort foglal el. Talán ez a legösszetettebb rácsszerkezet a weboldalon
+A Galéria CSS Gridet használ, amelyben egy kép két sort foglal el. Talán ez a legösszetettebb rácsszerkezet a weboldalon.
 
 ### 6.1. lépés: A szekció keret hozzáadása
 
-A Rórlam `</section>` eleme után illeszd be:
+A Rólam `</section>` eleme után illeszd be:
 
 ```html
 <section id="galeria" class="py-20 bg-tura-green-600">
@@ -485,7 +485,7 @@ A `<div>` belsejébe, a `<h2>` után:
 </div>
 ```
 
-**Hogyan működik az átnyúló cella**: A `row-start-1 row-end-3` a `gallery04.jpg` fájlon azt mondja a CSS Gridnek, hogy ezt a képet az 1. sor vonaltól a 3. sor vonalig helyezze el — két sort foglalva el. Ez csak a 3-oszlopos elrendezésben (`lg:grid-cols-3`) érvényesül. Mobilon a képek normálisan egymás alá rendeződnek.
+**Hogyan működik az átnyúló cella**: A `row-start-1 row-end-3` a `gallery04.jpg` fájlon azt mondja a CSS Gridnek, hogy ezt a képet a rácsrendszer 1. sor vonaltól a 3. sor vonaláig helyezze el — két sort foglalva el. Ez csak a 3-oszlopos elrendezésben(`lg:grid-cols-3`) érvényesül. Mobilon a képek normálisan egymás alá rendeződnek.
 
 ### 6.3. lépés: A galéria ellenőrzése
 
@@ -518,12 +518,12 @@ A  Galéria `</section>` eleme után szúrd be a következő kódot:
 </section>
 ```
 
-- `flex-col sm:flex-row`: ez a két osztály biztosítja számodra, hogy az űrlap elemek legkisebb nézetben egymás alatt 1 oszlopba jelenjen meg, míg sm törésponttól kezdve mobilon már egy sorba, egymás mellett jelenjen meg a beviteli mező és a gomb.
+- `flex-col sm:flex-row`: ez a két osztály biztosítja számodra, hogy az űrlap elemek legkisebb nézetben egymás alatt 1 oszlopban jelenjen meg, míg sm törésponttól kezdve mobilon már egy sorban, egymás mellett jelenjen meg a beviteli mező és a gomb.
 - `grow`: Flexbox növekedési tényezője. Ezzel az osztállyal éred el, hogy a beviteli mező szélessége mindig kitölti a rendelkezésre álló szabad helyet.
 
 ### 6.2. lépés: Ellenőrzés
 
-- A szekció világoszöld árnyalatú háttérrel rendelkezik
+- A szekció világoszöld árnyalatú háttérrel rendelkezik.
 - Mobilon az input és a gomb egymás alá kerül (`flex-col`)
 - `sm` és szélesebb képernyőn egymás mellé kerülnek (`sm:flex-row`)
 
@@ -569,14 +569,14 @@ A menü és azonbelül a menüpontok nem tekinthetőek reszponzívnak. Bevált s
 
 A hero szekcióban a főcím és a bekezdés asztali nézetben lehet akár nagyobb is a jelenleginél, de kisebb eszközöknél meg maradhat a jelenlegi beállítás. 
 
-Ezért a h1 elemen a `text-5xl md:text-7xl` osztályokat alkalmazd a betűméret módosítására, míg a hozzátartozó bekezdésre a `text-xl md:text-2xl` beállítást.
+Ezért a `<h1>` elemen a `text-5xl md:text-7xl` osztályokat alkalmazd a betűméret módosítására, míg a hozzátartozó bekezdésre a `text-xl md:text-2xl` beállítást.
 
 ```html
 <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">...</h1>
 <p class="text-xl md:text-2xl text-gray-100 mb-12 max-w-3xl mx-auto leading-relaxed">...</p>
 ```
 
-A hero section CTA gombjainak elhelyezkedését szeretnénk törésponthoz kötni. A legkisebb nézetben egymás alatt szeretnénk elhelyezni egy oszlopban, míg sm törésponttól kezdve pedig egy sorba szeretnénk megjeleníteni.
+A hero section CTA gombjainak elhelyezkedését szeretnénk törésponthoz kötni. A legkisebb nézetben egymás alatt szeretnénk elhelyezni egy oszlopban, míg sm törésponttól kezdve pedig egy sorban szeretnénk megjeleníteni.
 
 Ehhez a gombok tárolóelemén `flex-row` osztály helyett  `flex-col sm:flex-row` osztályokat helyezd el.
 
@@ -593,8 +593,8 @@ A láblécnél csak vízszintes irányban belső margó beállítást kell vált
 
 Ebben a workshopban elkészítetted: 
 
-- Az oldal tartalmi egységeit
-- Készítettél különböző formázású kártyákat
+- Az oldal tartalmi egységeit.
+- Készítettél különböző formázású kártyákat.
 - Reszponzív oldal kialakításához alkalmaztál töréspontokat és grid rácsszerkezetet.
 - Elemek igazításához ismételten használtad a Flexbox-ot.
 - Egyes elemek elhelyezéséhez pedig különböző pozícionálási módszereket alkalmaztál.
