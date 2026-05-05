@@ -29,3 +29,11 @@ applyTheme();
 themeSystemBtn.addEventListener('click', () => {applyTheme('system')})
 themeLightBtn.addEventListener('click', () => {applyTheme('light')})
 themeDarkBtn.addEventListener('click', () => {applyTheme('dark')})
+
+
+const menuBtn = document.getElementById("menuBtn");
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+
+menuBtn.addEventListener("click", () => {
+  hamburgerMenu.classList.toggle("hidden");
+});

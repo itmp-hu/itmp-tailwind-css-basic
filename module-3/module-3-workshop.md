@@ -2,12 +2,12 @@
 
 ## A modul témakörei
 
-Cél: 
+**Cél:**
 
 - Az oldal dark mód elkészítése
 - A weboldalon interakciók kialakítása (effektek, transzformációk, átmenetek kialakítása)
 
-Kiindulópont: A 2. modul workshop-jának megoldása 
+**Kiindulópont:** A 2. modul workshop-jának megoldása 
 
 ---
 
@@ -18,7 +18,7 @@ Ha minden tartalmi egységet sikerült elkészítened, akkor ideje a webodal dar
 1. Mondd meg a Tailwindnek, hogyan érzékelje a sötét módot (egy sor a `style.css` fájlban).
 2. Írd felül a szemantikus token értékeket, amikor a sötét mód aktív.
 
-Ezután böngésző DevTools segítségével ellenőrzöd, hogy működik-e — mielőtt bármilyen JavaScript kódot írnál.
+Ezután böngésző DevTools segítségével ellenőrizd, hogy működik-e — mielőtt bármilyen JavaScript kódot írnál.
 
 ### 5.1. lépés: Az `@custom-variant dark` hozzáadása a `style.css` fájlhoz
 
@@ -28,7 +28,7 @@ Nyisd meg a `src/style.css` fájlt. Add hozzá ezt a sort közvetlenül az `@imp
 @custom-variant dark (&:where(.dark, .dark *));
 ```
 
-Ez a Tailwind v4 deklarációja, amely működővé teszi a `dark:` előtagot. Azt mondja: "alkalmazd ezt a variánst, ha az elem maga, vagy bármelyik őse rendelkezik a `dark` osztállyal."
+Ez a Tailwind CSS v4 deklarációja, amely működővé teszi a `dark:` előtagot. Azt mondja: "alkalmazd ezt a variánst, ha az elem maga, vagy bármelyik őse rendelkezik a `dark` osztállyal."
 
 ### 1.2. lépés: A `.dark {}` token felülírások hozzáadása
 
@@ -57,7 +57,7 @@ Nyisd meg a böngésző DevTools-t (F12), menj a **Vizsgáló** (Firefox) vagy *
 <html class="scroll-smooth dark">
 ```
 
-Nyomj Entert. Az oldal azonnal sötét módra kell váltson — sötét háttér, világosabb szöveg, zöldes-sötét navigáció.
+Nyomj Entert. Az oldal azonnal sötét módra vált — sötét háttér, világosabb szöveg, zöldes-sötét navigáció.
 
 > **Ez a szemantikus tokenek megtérülése.** A `bg-bg`, `text-heading`, `bg-card-bg` stb. osztályokat használó összes szekció automatikusan frissül. Még egyetlen `dark:` variánst sem írtál.
 
@@ -147,7 +147,7 @@ A galéria képeinek fehér szegélye váltson zöldre (`dark:border-tura-green-
 Példa az 1. kép módosítására:
 
 ```html
-<img src="/img/gallery/gallery01.jpg"
+<img src="/imgages/gallery/gallery01.jpg"
   class="border border-white dark:border-tura-green-700 object-cover h-full"
   alt="Túrafotó 1">
 ```
@@ -213,7 +213,7 @@ Három gomb áll rendelkezésünkre:
 
 Először kérd le a három téma gomb node-ját. 
 
-A felhasználó elmentheti a kívánt témáját, ezt a leggyakrabban a böngészőablak localStoreage tárolójába kerül mentésre, ahol a 'theme' kulcshoz rendeljük a kiválasztott témát értékként (system/light/dark). A `savedTheme` változóba tárold el a tárolóbe mentett témát.
+A felhasználó elmentheti a kívánt témáját, ezt a leggyakrabban a böngészőablak `localStoreage` tárolójába kerül mentésre, ahol a 'theme' kulcshoz rendeljük a kiválasztott témát értékként (system/light/dark). A `savedTheme` változóba tárold el a tárolóba mentett témát.
 
 ```js
 import './style.css'
@@ -252,10 +252,10 @@ function applyTheme(theme = null){
 - Először az oldal HTML elem node-ját le kell kérned. Ez azért fontos, mert a Tailwind erre az elemre helyezi el a `dark` osztályt.
 - Az első elágazással csak azt kell megvizsgálnod, hogy ha van felhasználó által elmentett téma, akkor az legyen az elsődleges, különben pedig böngészőbe beállított téma.
 - A második elágazással a három témától függően helyezzük el vagy távolítjuk el a dark osztályt.
-    - dark esetén: a `html` elem osztályaihoz hozzáadjuk a 'dark' osztályt és ezzel aktiváljuk a dark módot.
-    - light esetén: a `html` elem osztályok listájából töröljük a 'dark' osztályt.
-    - system vagy null érték esetén: először le kell kérnünk a böngészőablak által preferált témát és ettől függően kell elhelyezned vagy levenned a `dark` osztályt.
-- Végül az aktuálisan kiválasztott témát mentsd el a localStorage-be.
+    - **dark** esetén: a `html` elem osztályaihoz hozzáadjuk a `dark` osztályt és ezzel aktiváljuk a dark módot.
+    - **light** esetén: a `html` elem osztályok listájából töröljük a 'dark' osztályt.
+    - **system** vagy null érték esetén: először le kell kérnünk a böngészőablak által preferált témát és ettől függően kell elhelyezned vagy levenned a `dark` osztályt.
+- Végül az aktuálisan kiválasztott témát mentsd el a `localStorage`-be.
 
 **A függvény alkalmazása**
 
@@ -272,10 +272,10 @@ themeDarkBtn.addEventListener('click', () => {applyTheme('dark')});
 
 ### 2.3. lépés: A sötét mód kapcsoló ellenőrzése
 
-1. Próbáld ki a három gomb működését.2. 
+1. Próbáld ki a három gomb működését. 
 3. Töltsd újra az oldalt — a sötét/világos beállítás megmarad
-4. Nyisd meg a DevTools → Application → Local Storage → `localhost:5173` — látnod kell egy `theme` kulcsot `'dark'` vagy `'light'` értékkel
-5. Töröld a `theme` kulcsot a Local Storage-ban, majd töltsd újra — az oldalnak az operációs rendszered beállítását kell figyelembe vennie
+4. Nyisd meg a DevTools / Application / Local Storage / `localhost:5173` — látnod kell egy `theme` kulcsot `'dark'` vagy `'light'` értékkel.
+5. Töröld a `theme` kulcsot a `localStorage-ban, majd töltsd újra — az oldalnak az operációs rendszered beállítását kell figyelembe vennie.
 
 ---
 
@@ -367,7 +367,7 @@ Miért jó ez nekünk? A szekció hátterében két design elemet helyeztünk el
 
 ### 3.5. lépés: Rólam szekció - gomb
 
-A Lépj kapcsolatba gombnál hasonló formázásokat szeretnénk alkalmazni mint a Rólam gombnál csak zöld színnel valósítjuk meg. Alkalmazd a `hover:bg-tura-green-700 dark:hover:bg-tura-brown-600/60 transition duration-300` utility osztályokat.
+A Lépj kapcsolatba gombnál hasonló formázásokat szeretnénk alkalmazni, mint a Rólam gombnál csak zöld színnel valósítjuk meg. Alkalmazd a `hover:bg-tura-green-700 dark:hover:bg-tura-brown-600/60 transition duration-300` utility osztályokat.
 
 ```html
 <a href="mailto:info@vadonszava.hu" class="px-8 py-3 bg-tura-green-600 dark:bg-tura-brown-600 text-white font-semibold rounded-lg hover:bg-tura-green-700 dark:hover:bg-tura-brown-600/60 transition duration-300">
@@ -381,7 +381,7 @@ A galéria képeinek megtekintésénél szeretnénk alkalmazni a sepia effektet,
 
 Minden képre alkalmaznod kell a `sepia-100 scale-100 hover:sepia-0 hover:scale-105 hover:z-10 transition-all duration-1000` utility osztályokat. 
 - A `sepia-100` és a `scale-100` jelenti a kép kiindulási állapotát.
-- A `hover:sepia-0`, `hover:scale-105`, éa `hover:z-10` jelenti a kép hover állapotát. A legutolsó osztályt azért kell, hogy a nagyított kép legyen legfelül ha esetleg összeérne vagy fedné valamelyik szomszédos képpel. Ami 5%-nál nem biztos hogy előfordul, de próbáld ki, hogy mi történik például `hover:scale-105` helyett `hover:scale-150` írnál.
+- A `hover:sepia-0`, `hover:scale-105`, éa `hover:z-10` jelenti a kép hover állapotát. A legutolsó osztályt azért kell használnod, hogy a nagyított kép legyen legfelül ha esetleg összeérne vagy fedné valamelyik szomszédos képpel. Ami 5%-nál nem biztos hogy előfordul, de próbáld ki, hogy mi történik például `hover:scale-105` helyett `hover:scale-150` írnál.
 
 ```html
 <img src="/images/gallery/gallery01.jpg" class="border border-white dark:border-tura-green-700 object-cover h-full sepia-100 scale-100 hover:sepia-0 hover:scale-105 hover:z-10 transition-all duration-1000" alt="Túrafotó 1">
@@ -404,7 +404,7 @@ A Feliratkozó gomb háttérszíne hover állapotban legyen sötétebb (`hover:b
 </button>
 ```
 
-### 3.8. lépés: Lábléc - Linkek, Téma gombok
+### 3.8. lépés: Lábléc - Linkek, téma gombok
 
 A linkek esetén a menüpontokhoz hasonlóan szeretnénk elérni, hogy zöld színű legyen a link a hover állapotban. Ezért a Facebook, Instagram és Strava linkekre helyezd el a `hover:text-tura-green-600 dark:hover:text-tura-green-100` utility osztályokat.
 
@@ -429,13 +429,13 @@ A projektben a hamburger menü funkcionális működése nem valósult meg, mert
 Készíts a `nav` elem után egy ideiglenes menüt:
 
 ```html
-<div id="hamburgerMenu" class="hidden md:hidden px-4 pb-4 pt-18">
-  <a href="#kezdolap" class="block py-2">Kezdőlap</a>
-  <a href="#utvonalak" class="block py-2">Útvonalak</a>
-  <a href="#felszereles" class="block py-2">Felszerelés</a>
-  <a href="#galeria" class="block py-2">Galéria</a>
-  <a href="#rolam" class="block py-2">Rólam</a>
-</div>
+  <div id="hamburgerMenu" class="hidden md:hidden px-4 pb-4 pt-18 fixed w-full z-40 bg-white dark:bg-tura-green-900 border-b border-tura-brown-100">
+    <a href="#kezdolap" class="block py-2 text-gray-600 dark:text-gray-100 hover:text-tura-green-600 dark:hover:text-tura-green-100 font-medium transition">Kezdőlap</a>
+    <a href="#utvonalak" class="block py-2 text-gray-600 dark:text-gray-100 hover:text-tura-green-600 dark:hover:text-tura-green-100 font-medium transition">Útvonalak</a>
+    <a href="#felszereles" class="block py-2 text-gray-600 dark:text-gray-100 hover:text-tura-green-600 dark:hover:text-tura-green-100 font-medium transition">Felszerelés</a>
+    <a href="#galeria" class="block py-2 text-gray-600 dark:text-gray-100 hover:text-tura-green-600 dark:hover:text-tura-green-100 font-medium transition">Galéria</a>
+    <a href="#rolam" class="block py-2 text-gray-600 dark:text-gray-100 hover:text-tura-green-600 dark:hover:text-tura-green-100 font-medium transition">Rólam</a>
+  </div>
 ```
 
 A linkek formázásait ha szeretnéd oldd meg a navigáció menüpontjai alapján.

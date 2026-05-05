@@ -3,7 +3,7 @@
 
 ## 1. Dark Mode használata és tesztelése
 
-A Tailwind v4-ben a sötét mód alapértelmezés szerint a böngésző/operációs rendszer beállításait követi (prefers-color-scheme), de könnyen átváltható kézi vezérlésre is.
+A Tailwind CSS v4-ben a sötét mód alapértelmezés szerint a böngésző/operációs rendszer beállításait követi (prefers-color-scheme), de könnyen átváltható kézi vezérlésre is.
 
 ### Hogyan működik?
 
@@ -11,7 +11,7 @@ A `dark:` variánst bármilyen utility elé odaillesztheted:
 
 ```html
 <div class="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">
-  Sötét módban megváltozik a színem!
+  Sötét módban megváltozik a háttérszín.
 </div>
 ```
 
@@ -46,11 +46,11 @@ Egy példán keresztül nézzük meg a működését.
 
 **1. Mi történik a :root-ban?**
 
-Amikor a :root-ban definiálod a `--color-nav-bg: white;` változót, az egy natív CSS változó lesz. A Tailwind v4 ezt alapértelmezés szerint nem látja utility-ként (nem lesz belőle bg-nav-bg), amíg be nem regisztrálod a @theme{} blokkba.
+Amikor a :root-ban definiálod a `--color-nav-bg: white;` változót, az egy natív CSS változó lesz. A Tailwind CSS v4 ezt alapértelmezés szerint nem látja utility-ként (nem lesz belőle bg-nav-bg), amíg be nem regisztrálod a `@theme{}` blokkba.
 
 **2. A sötét mód felülírása (.dark)**
 
-Ez a rész teljesen valid natív CSS. Ha a HTML-en rajta van a .dark osztály, a változó értéke megváltozik. Mivel a Tailwind v4 a CSS változókra épít, ez a dinamikus csere tökéletesen fog működni futásidőben is.
+Ez a rész teljesen valid natív CSS. Ha a HTML-en rajta van a `.dark` osztály, a változó értéke megváltozik. Mivel a Tailwind CSS v4 a CSS változókra épít, ez a dinamikus csere tökéletesen fog működni futásidőben is.
 
 **3. A mapping (@theme inline)**
 
@@ -70,15 +70,18 @@ Nyomj Entert. Az oldal azonnal sötét módra kell váltson beállításoktól f
 
 ---
 
-## 2. Interakciók: Effektek, Transzformációk és Átmenetek
+## 2. Interakciók: Effektek, transzformációk és átmenetek
 
-A Tailwind v4-ben az interakciók három pilléren nyugszanak: mi történik (State, állapot), hogyan mozog (Transition, átmenet) és hogyan változik az alakja (Transform).
+A Tailwind CSS v4-ben az interakciók három pilléren nyugszanak: 
+- mi történik (State, állapot), 
+- hogyan mozog (Transition, átmenet) és 
+- hogyan változik az alakja (Transform).
 
 ## Átmenetek (Transitions)
 
 Ez teszi simává a váltást az alap és pl. a hover állapot között.
 
-- Aktiválás: `transition` (alapértelmezett színekre, opacitásra vonatkozik), `transition-all`.
+- Aktiválás: `transition`, `transition-all`.
 - Időtartam: `duration-300` (300ms), `duration-700`.
 - Görbe: `ease-in`, `ease-out`, `ease-in-out`.
 
@@ -94,5 +97,5 @@ Az elemek mozgatása, forgatása és méretezése.
 ## Effektek (Effects)
 
 - Árnyék: `shadow-md`, `hover:shadow-2xl`.
-- Opacitás: `opacity-100`, `group-hover:opacity-50`.
+- Áttetszőség: `opacity-100`, `group-hover:opacity-50`.
 - Filterek: `blur-none`, `hover:blur-sm`, `grayscale`, `hover:grayscale-0`.
